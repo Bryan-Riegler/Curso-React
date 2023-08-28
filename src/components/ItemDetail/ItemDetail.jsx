@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import LoadingAnimation from '../LoadingAnimation/LoadingAnimation';
+import Swal from 'sweetalert2';
 import styles from './ItemDetail.module.css';
 
 const ItemDetail = ({ item, isLoading }) => {
@@ -9,6 +10,14 @@ const ItemDetail = ({ item, isLoading }) => {
 
     if (!item) {
         return null;
+    }
+
+    const handleClick = () => {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Esta funcion no está disponible',
+        })
     }
 
     return (
@@ -32,7 +41,7 @@ const ItemDetail = ({ item, isLoading }) => {
                             <p>Precio: ${item.price}</p>
 
                         </div>
-                        <button className={styles.btn}>Agregar al carrito</button>
+                        <button onClick={handleClick} className={styles.btn}>Agregar al carrito</button>
                     </div>
                 </div>
                 <div className='container mt-5'><p className={styles.description}>{item.description}</p></div>
