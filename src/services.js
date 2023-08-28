@@ -1,3 +1,6 @@
+
+import Swal from "sweetalert2";
+
 const products = [
     {
         id: "1",
@@ -144,6 +147,12 @@ export const getProduct = (id) => {
             if (product) {
                 resolve(product);
             } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Producto inexistente.',
+                    text: 'Regresa al inicio',
+                    confirmButtonText: 'Aceptar',
+                })
                 reject("No existe producto")
             }
         }, 1500)

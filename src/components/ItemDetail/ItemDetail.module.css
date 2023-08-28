@@ -78,3 +78,7 @@
         transform: scale(1.05);
     }
 }
+
+.custom-swal-container {
+    background-color: #31373d;
+}
