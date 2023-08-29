@@ -6,7 +6,7 @@ const products = [
         id: "1",
         name: "Cessna 150",
         price: "55,000",
-        category: "Monomotor.",
+        category: "Monomotor",
         description: "El Cessna 150 es un avión biplaza de propósito general equipado con tren de aterrizaje triciclo fijo y ala alta, diseñado originalmente para realizar labores de entrenamiento, turismo y uso personal. El Cessna 150 es simple, robusto y relativamente fiable. Por estas razones se convirtió en uno de los aviones de entrenamiento básico más populares del mundo. Con una muy buena estabilidad y manejo. Su velocidad ronda entre los 70 a 109nudos(130 a 202 km/h).",
         img: "../public/Cessna150.png",
         tripulacion: "1 Piloto.",
