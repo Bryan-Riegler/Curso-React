@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom'
 import LoadingAnimation from '../LoadingAnimation/LoadingAnimation'
 import styles from './ItemList.module.css'
 
+function formatPrice(price) {
+    return price.toLocaleString('en-US');
+}
 const ItemList = ({ items, isLoading }) => {
     if (isLoading) {
         return <LoadingAnimation />
@@ -18,7 +21,7 @@ const ItemList = ({ items, isLoading }) => {
                                 <img src={item.img} alt="" className={styles.img} />
                                 <h3 className={styles.name}>{item.name}</h3>
                                 <div className={styles.descCard}>
-                                    <p className={styles.price}>${item.price}</p>
+                                    <p className={styles.price}>${formatPrice(item.price)}</p>
                                     <div className={styles.categoryContainer}><p>{item.category}</p></div>
                                 </div>
                             </Link>

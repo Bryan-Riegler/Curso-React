@@ -1,0 +1,134 @@
+.contenedor {
+    background-color: #31373d;
+    min-height: 92.8vh;
+    color: rgb(211, 217, 223);
+}
+
+.title {
+    text-shadow: 0 3px 3px rgb(0, 0, 0);
+    font-size: 3rem;
+}
+
+.eptCart {
+    font-size: 2rem;
+    margin-top: 20rem;
+    text-shadow: 0 3px 3px rgb(0, 0, 0);
+}
+
+.clerCartCont {
+    display: flex;
+    justify-content: end;
+}
+
+
+.clearCart {
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    font-size: 1.3rem;
+    background-color: #e74b37;
+    border: none;
+    border-radius: 4px;
+    padding: 0.3rem;
+    transition: transform 0.25s;
+    box-shadow: 0 2px 2px rgb(0, 0, 0);
+
+    &:hover {
+        transform: scale(1.05);
+    }
+
+}
+
+.cartCat {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.7rem;
+    width: 53%;
+    margin-left: 2rem;
+    text-shadow: 0 3px 3px rgb(0, 0, 0);
+}
+
+.listCont {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.list {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.7rem;
+    background-color: #23282c;
+    padding: 1.5rem;
+    border-radius: 4px;
+    box-shadow: 0 3px 8px rgb(0, 0, 0);
+    text-shadow: 0 3px 3px rgb(0, 0, 0);
+
+}
+
+.price {
+    margin-left: 1.2rem;
+}
+
+.qty {
+    margin-left: 6rem;
+}
+
+.btnAdd {
+    font-size: 1.3rem;
+    background-color: #5bc0de;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    transition: transform 0.25s;
+    box-shadow: 0 2px 2px rgb(0, 0, 0);
+    height: 3rem;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.btnRemove {
+    font-size: 1.3rem;
+    background-color: #e74b37;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    transition: transform 0.25s;
+    box-shadow: 0 2px 2px rgb(0, 0, 0);
+    height: 3rem;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.btnMenos {
+    font-size: 1.3rem;
+    background-color: #e74b37;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    transition: transform 0.25s;
+    box-shadow: 0 2px 2px rgb(0, 0, 0);
+    height: 3rem;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.totalCont {
+    display: flex;
+    justify-content: start;
+    margin-left: 2rem;
+    margin-top: 3rem;
+    font-size: 2rem;
+    text-shadow: 0 3px 3px rgb(0, 0, 0);
+}
+
+.total {
+    font-weight: 750;
+    color: #5bc0de;
+}

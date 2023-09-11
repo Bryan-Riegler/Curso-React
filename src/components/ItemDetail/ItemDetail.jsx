@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 import LoadingAnimation from '../LoadingAnimation/LoadingAnimation';
+import { useContext } from 'react';
+import CartContext from '../../context/CartContext';
 import Swal from 'sweetalert2';
 import styles from './ItemDetail.module.css';
 
@@ -20,6 +22,13 @@ const ItemDetail = ({ item, isLoading }) => {
         })
     }
 
+    const { addItem } = useContext(CartContext)
+    const handleToCart = () => {
+        addItem(item, 1);
+    }
+    let price = item.price.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+
+
     return (
         <div className={styles.container}>
             <div className={styles.contImgInfo}>
@@ -38,10 +47,10 @@ const ItemDetail = ({ item, isLoading }) => {
                         <p>Autonomia: {item.autonomia}</p>
                         <p>Helice de: {item.helice}</p>
                         <div className={styles.priceCategory}>
-                            <p>Precio: ${item.price}</p>
+                            <p>Precio: {price}</p>
 
                         </div>
-                        <button onClick={handleClick} className={styles.btn}>Agregar al carrito</button>
+                        <button onClick={handleToCart} className={styles.btn}>Agregar al carrito</button>
                     </div>
                 </div>
                 <div className='container mt-5'><p className={styles.description}>{item.description}</p></div>
