@@ -1,11 +1,10 @@
 import PropTypes from 'prop-types';
 import LoadingAnimation from '../LoadingAnimation/LoadingAnimation';
-import { useContext } from 'react';
-import CartContext from '../../context/CartContext';
 import Swal from 'sweetalert2';
+import { formatPrice } from '../../utilities';
 import styles from './ItemDetail.module.css';
 
-const ItemDetail = ({ item, isLoading }) => {
+const ItemDetail = ({ item, isLoading, addItem }) => {
     if (isLoading) {
         return <LoadingAnimation />
     }
@@ -16,17 +15,12 @@ const ItemDetail = ({ item, isLoading }) => {
 
     const handleClick = () => {
         Swal.fire({
-            icon: 'error',
+            icon: 'success',
             title: 'Oops...',
             text: 'Esta funcion no está disponible',
         })
     }
 
-    const { addItem } = useContext(CartContext)
-    const handleToCart = () => {
-        addItem(item, 1);
-    }
-    let price = item.price.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
 
 
     return (
@@ -36,7 +30,7 @@ const ItemDetail = ({ item, isLoading }) => {
                     <h1 className={styles.name}>{item.name}</h1>
                     <p>{item.category}</p></div>
                 <div className={styles.infoImg}>
-                    <img src={item.img} className={styles.img} alt="" />
+                    <img src={`../../public/${item.img}`} className={styles.img} alt="" />
                     <div className={styles.containerInfo}>
                         <p>Tripulacion: {item.tripulacion}</p>
                         <p>Capacidad: {item.capacidad}</p>
@@ -47,10 +41,10 @@ const ItemDetail = ({ item, isLoading }) => {
                         <p>Autonomia: {item.autonomia}</p>
                         <p>Helice de: {item.helice}</p>
                         <div className={styles.priceCategory}>
-                            <p>Precio: {price}</p>
+                            <p>Precio: ${formatPrice(item.price)}</p>
 
                         </div>
-                        <button onClick={handleToCart} className={styles.btn}>Agregar al carrito</button>
+                        <button onClick={() => addItem(item, 1)} className={styles.btn}>Agregar al carrito</button>
                     </div>
                 </div>
                 <div className='container mt-5'><p className={styles.description}>{item.description}</p></div>

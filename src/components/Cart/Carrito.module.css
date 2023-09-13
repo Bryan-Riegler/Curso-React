@@ -85,13 +85,13 @@
     height: 3rem;
 
     &:hover {
-        transform: scale(1.05);
+        background-color: #63d4f7;
     }
 }
 
 .btnRemove {
     font-size: 1.3rem;
-    background-color: #e74b37;
+    background-color: #9696968e;
     border: none;
     border-radius: 10px;
     padding: 10px 20px;
@@ -100,13 +100,13 @@
     height: 3rem;
 
     &:hover {
-        transform: scale(1.05);
+        background-color: #969696;
     }
 }
 
 .btnMenos {
     font-size: 1.3rem;
-    background-color: #e74b37;
+    background-color: #9696968e;
     border: none;
     border-radius: 10px;
     padding: 10px 20px;
@@ -115,7 +115,7 @@
     height: 3rem;
 
     &:hover {
-        transform: scale(1.05);
+        background-color: #969696;
     }
 }
 
@@ -131,4 +131,26 @@
 .total {
     font-weight: 750;
     color: #5bc0de;
+}
+
+.btnsContainer {
+    display: flex;
+    justify-content: end;
+    gap: 2rem;
+}
+
+.btn {
+    font-size: 1.2rem;
+    background-color: #5bc0de;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 15px;
+    transition: transform 0.25s;
+    box-shadow: 0 2px 2px rgb(0, 0, 0);
+    height: 3rem;
+    font-weight: 500;
+
+    &:hover {
+        background-color: #63d4f7;
+    }
 }

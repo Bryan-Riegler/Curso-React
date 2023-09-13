@@ -1,6 +1,6 @@
 .itemListContainer {
     background-color: #31373d;
-    height: 113vh;
+    min-height: 110vh;
 }
 
 .productListStyle {
@@ -24,14 +24,15 @@
     margin-top: 2rem;
 
     &:hover {
-        transform: scale(1.05);
+        transform: scale(1.01);
+        background-color: #282a2e;
     }
 }
 
 .img {
     width: 26rem;
     height: 20rem;
-    border-radius: 8px;
+    border-radius: 4px;
     box-shadow: 0 2px 8px rgb(34, 34, 34);
 
 }

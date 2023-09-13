@@ -1,11 +1,10 @@
 import propTypes from 'prop-types'
 import { Link } from 'react-router-dom'
+import { formatPrice } from '../../utilities'
 import LoadingAnimation from '../LoadingAnimation/LoadingAnimation'
 import styles from './ItemList.module.css'
 
-function formatPrice(price) {
-    return price.toLocaleString('en-US');
-}
+
 const ItemList = ({ items, isLoading }) => {
     if (isLoading) {
         return <LoadingAnimation />
@@ -13,12 +12,12 @@ const ItemList = ({ items, isLoading }) => {
 
     return (
         <div className={styles.itemListContainer}>
-            <div className=''>
+            <div>
                 <ul className={styles.productListStyle}>
                     {items.map((item) => (
                         <li key={item.id} className={styles.productItem}>
                             <Link to={`/item/${item.id}`}>
-                                <img src={item.img} alt="" className={styles.img} />
+                                <img src={`../../public/${item.img}`} alt="" className={styles.img} />
                                 <h3 className={styles.name}>{item.name}</h3>
                                 <div className={styles.descCard}>
                                     <p className={styles.price}>${formatPrice(item.price)}</p>
