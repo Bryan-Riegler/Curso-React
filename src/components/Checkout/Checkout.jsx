@@ -49,7 +49,6 @@ const Checkout = () => {
                 icon: 'error',
                 title: 'Completa todos los campos',
                 showConfirmButton: false,
-                timer: 2000
             });
         }
     };
