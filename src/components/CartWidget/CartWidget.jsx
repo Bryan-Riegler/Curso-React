@@ -4,7 +4,7 @@ const CartWidget = () => {
     const { totalQuantity } = useContext(CartContext);
 
     return (
-        <div>
+        <div className="container">
             <button className="btn btn-outline-secondary position-relative">
                 <i className="bi bi-cart3"></i>
                 <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info text-dark">

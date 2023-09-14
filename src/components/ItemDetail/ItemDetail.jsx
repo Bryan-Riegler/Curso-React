@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import LoadingAnimation from '../LoadingAnimation/LoadingAnimation';
 import Swal from 'sweetalert2';
 import { formatPrice } from '../../utilities';
+import { useState } from 'react';
 import styles from './ItemDetail.module.css';
 
 const ItemDetail = ({ item, isLoading, addItem }) => {
@@ -13,12 +14,27 @@ const ItemDetail = ({ item, isLoading, addItem }) => {
         return null;
     }
 
+    const [quantity, setQuantity] = useState(1);
+
+    const quantityChange = (event) => {
+        const newQuantity = parseInt(event.target.value, 10);
+        setQuantity(newQuantity);
+    }
+
     const handleClick = () => {
-        Swal.fire({
-            icon: 'success',
-            title: 'Oops...',
-            text: 'Esta funcion no está disponible',
-        })
+        addItem(item, quantity);
+        if (quantity == 1) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Producto agregado correctamente'
+            })
+        } else {
+            Swal.fire({
+                icon: 'success',
+                title: 'Productos agregados correctamente'
+            })
+        }
+
     }
 
 
@@ -32,19 +48,32 @@ const ItemDetail = ({ item, isLoading, addItem }) => {
                 <div className={styles.infoImg}>
                     <img src={`../../public/${item.img}`} className={styles.img} alt="" />
                     <div className={styles.containerInfo}>
-                        <p>Tripulacion: {item.tripulacion}</p>
-                        <p>Capacidad: {item.capacidad}</p>
-                        <p>Motor: {item.motor}</p>
-                        <p>Potencia: {item.potencia}</p>
-                        <p>Consumo: {item.consumo}</p>
-                        <p>Combustible total: {item.comb}</p>
-                        <p>Autonomia: {item.autonomia}</p>
-                        <p>Helice de: {item.helice}</p>
+                        <p>-Tripulacion: {item.tripulacion}</p>
+                        <p>-Capacidad: {item.capacidad}</p>
+                        <p>-Motor: {item.motor}</p>
+                        <p>-Potencia: {item.potencia}</p>
+                        <p>-Consumo: {item.consumo}</p>
+                        <p>-Combustible total: {item.comb}</p>
+                        <p>-Autonomia: {item.autonomia}</p>
+                        <p>-Helice de: {item.helice}</p>
                         <div className={styles.priceCategory}>
                             <p>Precio: ${formatPrice(item.price)}</p>
 
                         </div>
-                        <button onClick={() => addItem(item, 1)} className={styles.btn}>Agregar al carrito</button>
+                        <div className={styles.addContainer}>
+                            <div>
+                                <label htmlFor="quantitySelect">Cantidad: </label>
+                                <select value={quantity} id="quantitySelect" onChange={quantityChange} className={styles.select}>
+                                    {Array.from({ length: 10 }, (_, index) => (
+                                        <option key={index} value={index + 1}>
+                                            {index + 1}
+                                        </option>
+                                    ))}
+                                </select></div>
+                            <button onClick={handleClick} className={styles.btn}>Agregar al carrito</button>
+
+                        </div>
+
                     </div>
                 </div>
                 <div className='container mt-5'><p className={styles.description}>{item.description}</p></div>

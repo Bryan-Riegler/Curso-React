@@ -17,7 +17,7 @@ export const getProduct = (id) => {
                         icon: 'error',
                         title: 'Producto inexistente.',
                         text: 'Regresa al inicio',
-                        confirmButtonText: 'Aceptar',
+                        confirmButtonText: 'Aceptar'
                     })
                     resolve(null);
                 }

@@ -2,9 +2,9 @@ import { useContext, useEffect, } from 'react';
 import CartContext from '../../context/CartContext';
 import { Link } from 'react-router-dom';
 import { formatPrice, getCartTotal } from '../../utilities';
-import styles from './Carrito.module.css';
+import styles from './Cart.module.css';
 
-const Carrito = () => {
+const Cart = () => {
     const { cart, clear, addItem, removeItem, removeOneItem } = useContext(CartContext)
 
     const isCartEmpty = cart.length === 0
@@ -55,4 +55,4 @@ const Carrito = () => {
     )
 }
 
-export default Carrito
+export default Cart

@@ -8,12 +8,12 @@ import "bootstrap-icons/font/bootstrap-icons.css"
 import './index.css'
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDCurcpV0Z59wIc1BOr99Ax-UPErqgBuEw",
-  authDomain: "la-tienda-14ec6.firebaseapp.com",
-  projectId: "la-tienda-14ec6",
-  storageBucket: "la-tienda-14ec6.appspot.com",
-  messagingSenderId: "402717274419",
-  appId: "1:402717274419:web:f2752ef431f5f011f40e46"
+  apiKey: import.meta.env.VITE_FIRESTORE_API_KEY,
+  authDomain: import.meta.env.VITE_FIRESTORE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIRESTORE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIRESTORE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIRESTORE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIRESTORE_APP_ID,
 };
 
 initializeApp(firebaseConfig);
