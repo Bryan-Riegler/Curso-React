@@ -19,7 +19,6 @@ const CartProvider = ({ children }) => {
             setCart(newCart);
         } else {
             setCart([...cart, { id, quantity }]);
-            console.log(cart)
         }
     };
 
