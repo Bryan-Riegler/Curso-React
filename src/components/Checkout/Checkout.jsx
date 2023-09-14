@@ -23,28 +23,36 @@ const Checkout = () => {
         });
     };
 
-    const isFormValid = name && phone && email;
+    const isFormValid = name && phone && email.includes("@");
 
     const onSubmit = (event) => {
         event.preventDefault();
-        if (isFormValid) {
-            Checkout()
-            Swal.fire({
-                icon: 'success',
-                title: 'Orden realizada correctamente',
-                showConfirmButton: false,
-                timer: 2000
-            })
-            clear()
+        if (name && phone) {
+            if (email.includes('@')) {
+                Checkout();
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Orden realizada correctamente',
+                    showConfirmButton: false,
+                    timer: 2000
+                });
+                clear();
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Ingresa un correo válido',
+                    showConfirmButton: true,
+                });
+            }
         } else {
             Swal.fire({
                 icon: 'error',
                 title: 'Completa todos los campos',
                 showConfirmButton: false,
                 timer: 2000
-            })
+            });
         }
-    }
+    };
 
     const Checkout = () => {
         const order = {
