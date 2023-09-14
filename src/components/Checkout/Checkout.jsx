@@ -48,7 +48,7 @@ const Checkout = () => {
             Swal.fire({
                 icon: 'error',
                 title: 'Completa todos los campos',
-                showConfirmButton: false,
+                showConfirmButton: true,
             });
         }
     };
