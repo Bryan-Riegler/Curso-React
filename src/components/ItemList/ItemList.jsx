@@ -17,7 +17,7 @@ const ItemList = ({ items, isLoading }) => {
                     {items.map((item) => (
                         <li key={item.id} className={styles.productItem}>
                             <Link to={`/item/${item.id}`}>
-                                <img src={`../../..${item.img}`} alt="" className={styles.img} />
+                                <img src={`../../${item.img}`} alt="" className={styles.img} />
                                 <h3 className={styles.name}>{item.name}</h3>
                                 <div className={styles.descCard}>
                                     <p className={styles.price}>${formatPrice(item.price)}</p>
