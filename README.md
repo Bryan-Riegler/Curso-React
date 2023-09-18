@@ -24,6 +24,8 @@ Para utilizarlo sin problemas con la base de datos de Firebase, es necesario ten
 
 https://github.com/Bryan-Riegler/Curso-React/assets/139500953/0228c050-9c57-4f61-9b72-607342490089
 
+### Deploy Netlify
+https://la-tiendaa.netlify.app/
 
 ## Componentes
 ### Navbar
