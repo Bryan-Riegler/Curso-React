@@ -46,7 +46,7 @@ const ItemDetail = ({ item, isLoading, addItem }) => {
                     <h1 className={styles.name}>{item.name}</h1>
                     <p>{item.category}</p></div>
                 <div className={styles.infoImg}>
-                    <img src={`../../public/${item.img}`} className={styles.img} alt="" />
+                    <img src={`../../${item.img}`} className={styles.img} alt="" />
                     <div className={styles.containerInfo}>
                         <p>-Tripulacion: {item.tripulacion}</p>
                         <p>-Capacidad: {item.capacidad}</p>
